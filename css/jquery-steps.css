@@ -1,0 +1,83 @@
+.step-app {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+}
+.step-steps {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    width: 100%;
+    max-width: 245px;
+}
+.step-steps > li {
+    list-style: none;
+    flex: 1;
+    margin-bottom: 0;
+}
+.step-steps > li:last-child a {
+    border: none;
+}
+.step-steps > li > a {
+    display: block;
+    padding: 12px;
+    color: #333;
+    background-color: #e5e5e5;
+    text-decoration: none;
+    line-height: 1;
+    font-size: 14px;
+}
+.step-steps > li > a > .number {
+    background: #fff;
+    padding: 0 8px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 15px;
+    border-radius: 3px;
+    color: #333;
+}
+.step-steps > li > a:hover {
+    background-color: #ddd;
+}
+.step-steps > li.active a {
+    background-color: #32c5d2;
+    color: #fff;
+}
+.step-steps > li.error a {
+    background-color: #e7505a;
+    color: #fff;
+}
+.step-steps > li.done a {
+    background-color: #3cb371;
+    color: #fff;
+}
+.step-content {
+    border: 0;
+    padding: 0 10px 10px 24px;
+}
+.step-tab-panel {
+    display: none;
+}
+.step-tab-panel.active {
+    display: block;
+}
+.step-footer {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
