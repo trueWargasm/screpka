@@ -12,7 +12,7 @@ class ServiceController  extends \yii\web\Controller
         $formModel = new ServiceForm();
         $session = \Yii::$app->session;
 
-        $anketa = json_decode($session["anketa"],1);
+        $anketa = $session["anketa"];
         $h = $anketa["width"];
         $w = $anketa["length"];
 

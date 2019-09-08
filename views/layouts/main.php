@@ -21,9 +21,10 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <link rel="stylesheet" href="./css/milligram.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="./css/jquery-steps.css">
+    <link rel="stylesheet" href="/css/milligram.css">
+    <link href="https://fonts.googleapis.com/css?family=Tinos&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/jquery-steps.css">
 </head>
 <body>
 <?php $this->beginBody() ?>

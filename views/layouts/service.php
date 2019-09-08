@@ -23,6 +23,7 @@ AppAsset::register($this);
     <?php $this->head() ?>
     <link rel="stylesheet" href="/css/milligram.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Tinos&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/jquery-steps.css">
 </head>
 <body>
@@ -44,6 +45,7 @@ AppAsset::register($this);
 <script type="text/javascript" src="/libs/jquery/jquery-steps.js"></script>
 <script type="text/javascript" src="/libs/jquery/jquery-ui.js"></script>
 <script type="text/javascript" src="/js/wizard.js"></script>
+
 <script>
     $('#steps').steps({
         transitionEffect: "slideLeft",

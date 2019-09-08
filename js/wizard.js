@@ -20,11 +20,11 @@ $('#cleanup-discard').change(
 
 $('.cleanup-check').change(
     function(){
-        if ($(this).is(':checked')) {
+
             $('#cleanup-discard').prop("checked", false);
             $('#step1-set').val(1);
             window.total_price.clean_up = $('.cleanup-check:checked').length * window.sqr * 125;
-        }
+
         window.recalc();
 });
 
@@ -110,5 +110,56 @@ $('.advert-banners').change(
                 window.total_price.banners = banners;
         }
         $('#advert-banners-discard').prop("checked", false);
+        window.recalc();
+    });
+
+//Projector
+$('#projector-discard').change(
+    function(){
+        if ($(this).is(':checked')) {
+            $('.projector').val(0);
+            window.total_price.projector = 0;
+        }
+        window.recalc();
+    });
+
+
+$('.projector').change(
+    function(){
+
+        //количество
+        projector = 0;
+        $.each($('.projector[type="text"]'), function(index, item){
+            projector = projector + ($(item).data('price') *  $(item).val());
+        })
+        window.total_price.projector = projector;
+
+        $('#projector-discard').prop("checked", false);
+        window.recalc();
+    });
+
+
+//audio
+$('#audio-discard').change(
+    function(){
+        if ($(this).is(':checked')) {
+            $('.audio').val(0);
+            window.total_price.audio = 0;
+        }
+        window.recalc();
+    });
+
+
+$('.audio').change(
+    function(){
+
+        //количество
+        audio = 0;
+        $.each($('.audio[type="text"]'), function(index, item){
+            audio = audio + ($(item).data('price') *  $(item).val());
+        })
+        window.total_price.audio = audio;
+
+        $('#audio-discard').prop("checked", false);
         window.recalc();
     });

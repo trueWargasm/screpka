@@ -14,7 +14,7 @@ class FormController extends \yii\web\Controller
             if ($formModel->load(Yii::$app->request->post(), '') && $formModel->validate()) {
                 $session = Yii::$app->session;
                 $session["step"] = 2;
-                $session["anketa"] = json_encode($formModel, JSON_UNESCAPED_UNICODE);
+                $session["anketa"] = $formModel->toArray();
                return $this->redirect('/build');
             } else {
                 Yii::$app->session->setFlash('warning',"err");

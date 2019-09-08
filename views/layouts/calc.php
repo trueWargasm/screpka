@@ -7,10 +7,11 @@
 
     <title>Застройка</title>
     <meta name="description" content="">
-
+    <link href="https://fonts.googleapis.com/css?family=Tinos&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="stylesheet" href="/css/main.css">
 
 </head>
 <body>
@@ -21,11 +22,9 @@
             <div id="dragBoard" class="dragBoard">
                 <canvas id="canvas" class="canvas"></canvas>
             </div>
-            <!--div class="bottom-canvas">Добавлено элементов: <span id="count"></span></div-->
             <div class="bottom-canvas">Цена доп. оборудования: <span id="total"></span> руб</div>
             <button class="button" id="delete">удалить</button>
-            <button class="button" id="save">сохранить</button>
-            <button class="button" id="upload">загрузить</button>
+            <button class="button" id="next">далее</button>
         </div>
 
         <div class="item-rect">

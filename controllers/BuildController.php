@@ -7,17 +7,11 @@ Use Yii;
 
 class BuildController extends \yii\web\Controller
 {
+    public $enableCsrfValidation = false;
+
     public function actionIndex(){
         $session = Yii::$app->session;
-
-
-
-        //if($session->isActive && $session["step"] == 2){
-            return $this->render("index");
-        //} else {
-        //    return $this->redirect("/");
-        //}
-
+        return $this->render("index");
     }
 
     public function actionCustom(){
@@ -28,7 +22,7 @@ class BuildController extends \yii\web\Controller
                 $session = Yii::$app->session;
                 $session["step"] = 3;
                 $session["build_type"] = "custom";
-                $session["build"] = json_encode($modelFrom, JSON_UNESCAPED_UNICODE);
+                $session["build"] = $modelFrom->toArray();
                 $this->redirect('/service');
             }else {
                 Yii::$app->session->setFlash('warning',json_encode($modelFrom));
@@ -40,8 +34,7 @@ class BuildController extends \yii\web\Controller
 
     public function actionStandart(){
         $session = Yii::$app->session;
-        $anketa = json_decode($session["anketa"],1);
-
+        $anketa = $session["anketa"];
 
         $h= $anketa["width"];
         $w=$anketa["length"];
@@ -49,5 +42,16 @@ class BuildController extends \yii\web\Controller
         return $this->render('empty', ['phpWidth' => $w, 'phpLength' => $h]);
 
 
+    }
+
+    public function actionSavebuild(){
+        $session = Yii::$app->session;
+        $session["step"] = 3;
+        $session["build_type"] = "standart";
+        Yii::$app->response->format = 'json';
+
+        $session["build"] = Yii::$app->request->post();
+
+        return $session;
     }
 }

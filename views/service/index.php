@@ -22,10 +22,11 @@
                             <li><a href="#step2">Пропуск к монтажным воротам</a></li>
                             <li><a href="#step3">VIP парковка</a></li>
                             <li><a href="#step4">Наружная реклама</a></li>
-                            <li><a href="#step5">Оборудование для конференций</a></li>
-                            <li><a href="#step6">Конференц зал</a></li>
-                            <li><a href="#step7">Радио объявления</a></li>
-                            <li><a href="#step8">Интернет на стенде</a></li>
+                            <li><a href="#step5">Оборудование для конференций, ПРОЕКТОР</a></li>
+                            <li><a href="#step6">Оборудование для конференций, АУДИО</a></li>
+                            <li><a href="#step7">Конференц зал</a></li>
+                            <li><a href="#step8">Радио объявления</a></li>
+                            <li><a href="#step9">Интернет на стенде</a></li>
                         </ul>
                         <div class="step-footer">
                             <p class="total-price">Стоимость дополнительных услуг:<span id="add_service">0</span> р.</p>
@@ -73,6 +74,8 @@
                                     <fieldset>
                                         <input id="pass-to-gates-discard" name="pass[]" type="checkbox" value="0" />Отказываюсь от услуги
                                     </fieldset>
+                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
+                                    <input type="hidden" id="step2-set" value="0"/>
                                 </div>
                                 <div class="step-tab-panel" id="step3">
                                     <label>VIP парковка</label>
@@ -87,6 +90,8 @@
                                     <fieldset>
                                         <input id="vip-parking-discard" name="vip" type="checkbox" value="0" />Отказываюсь от услуги
                                     </fieldset>
+                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
+                                    <input type="hidden" id="step3-set" value="0"/>
                                 </div>
                                 <div class="step-tab-panel" id="step4">
                                     <fieldset>
@@ -115,26 +120,79 @@
                                     <fieldset>
                                         <input id="advert-banners-discard" name="banner" type="checkbox" value="0" />Отказываюсь от услуги
                                     </fieldset>
+                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
+                                    <input type="hidden" id="step4-set" value="0"/>
                                 </div>
                                 <div class="step-tab-panel" id="step5">
-                                    <label>Оборудование для конференций</label>
+                                    <label>Оборудование для конференций, ПРОЕКТОР</label>
                                     <fieldset>
-                                        <input type="checkbox" />Проектор
+                                        4000 Lum / за 1 день (26000 р.)
+                                        <input name="projector[4000]" data-price="26000" value="0" type="text" class="step-tab-input projector" />
                                     </fieldset>
                                     <fieldset>
-                                        <input type="checkbox" />Аудио
+                                        6000 Lum / за 1 день (28000 р.)
+                                        <input name="projector[6000]" data-price="28000" value="0" type="text" class="step-tab-input projector" />
                                     </fieldset>
+                                    <fieldset>
+                                        8000 Lum / за 1 день (33000 р.)
+                                        <input name="projector[8000]" data-price="33000" value="0" type="text" class="step-tab-input projector" />
+                                    </fieldset>
+                                    <fieldset>
+                                        10000 Lum / за 1 день (45000 р.)
+                                        <input name="projector[10000]" data-price="45000" value="0" type="text" class="step-tab-input projector" />
+                                    </fieldset>
+                                    <fieldset>
+                                        Экран 2,5 х 2,5 метра (4100 р.)
+                                        <input name="projector[screen]" data-price="4100" value="0" type="text" class="step-tab-input projector" />
+                                    </fieldset>
+                                    <fieldset>
+                                        Напольная панель  (5500 р.)
+                                        <input name="projector[floor_panel]" data-price="5500" value="0" type="text" class="step-tab-input projector" />
+                                    </fieldset>
+                                    <fieldset>
+                                        <input id="projector-discard" name="projector" type="checkbox" value="0" />Отказываюсь от услуги
+                                    </fieldset>
+                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
+                                    <input type="hidden" id="step5-set" value="0"/>
                                 </div>
                                 <div class="step-tab-panel" id="step6">
+                                    <label>Оборудование для конференций, АУДИО</label>
+                                    <fieldset>
+                                        Микрофон (1500 р.)
+                                        <input name="audio[mocro]" data-price="1500" value="0" type="text" class="step-tab-input audio" />
+                                    </fieldset>
+                                    <fieldset>
+                                        Радиомикрофон (2700 р.)
+                                        <input name="audio[radiomicro]" data-price="2700" value="0" type="text" class="step-tab-input audio" />
+                                    </fieldset>
+                                    <fieldset>
+                                        Звук 1 кВт (14500 р.)
+                                        <input name="audio[1k]" data-price="14500" value="0" type="text" class="step-tab-input audio" />
+                                    </fieldset>
+                                    <fieldset>
+                                        Звук 2 кВт (24000 р.)
+                                        <input name="audio[2k]" data-price="24000" value="0" type="text" class="step-tab-input audio" />
+                                    </fieldset>
+                                    <fieldset>
+                                        Мобильный комплект 600 вт  (11000 р.)
+                                        <input name="audio[mobile600k]" data-price="11000" value="0" type="text" class="step-tab-input audio" />
+                                    </fieldset>
+                                    <fieldset>
+                                        <input id="audio-discard" name="audio" type="checkbox" value="0" />Отказываюсь от услуги
+                                    </fieldset>
+                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
+                                    <input type="hidden" id="step6-set" value="0"/>
+                                </div>
+                                <div class="step-tab-panel" id="step7">
                                     <fieldset>
                                         <input type="checkbox" />Конференц зал
                                     </fieldset></div>
-                                <div class="step-tab-panel" id="step7">
+                                <div class="step-tab-panel" id="step8">
                                     <fieldset>
                                         Радио объявления (750 руб.) <input type="text" class="step-tab-input" />  шт.
                                     </fieldset>
                                 </div>
-                                <div class="step-tab-panel" id="step8">
+                                <div class="step-tab-panel" id="step9">
                                     <fieldset>
                                         <input type="checkbox" />Интернет на стенде
                                     </fieldset></div>
