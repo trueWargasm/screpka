@@ -124,78 +124,40 @@
                                     <input type="hidden" id="step4-set" value="0"/>
                                 </div>
                                 <div class="step-tab-panel" id="step5">
-                                    <label>Оборудование для конференций, ПРОЕКТОР</label>
                                     <fieldset>
-                                        4000 Lum / за 1 день (26000 р.)
-                                        <input name="projector[4000]" data-price="26000" value="0" type="text" class="step-tab-input projector" />
+                                        <input type="hidden" name="conference-hall" value="no"/>
+                                        <input id="conference-hall" name="conference-hall" type="checkbox" value="yes" />Хочу провести конференцию, нужен Конференц зал
+                                    </fieldset></div>
+                                    <fieldset>
+                                        <input id="conference-hall-discard" name="banner" type="checkbox" value="0" />Отказываюсь от услуги
+                                    </fieldset>
+                                <div class="step-tab-panel" id="step6">
+                                    <fieldset>
+                                        Радио объявления (750 руб.) <input type="text" name="radio-ads-count" class="step-tab-input radio-ads" />  шт.
                                     </fieldset>
                                     <fieldset>
-                                        6000 Lum / за 1 день (28000 р.)
-                                        <input name="projector[6000]" data-price="28000" value="0" type="text" class="step-tab-input projector" />
+                                        Текст объявления <input type="text" name="radio-ads-text" class="step-tab-input radio-ads" width="80%"/>  шт.
                                     </fieldset>
                                     <fieldset>
-                                        8000 Lum / за 1 день (33000 р.)
-                                        <input name="projector[8000]" data-price="33000" value="0" type="text" class="step-tab-input projector" />
+                                        <input id="radio-ads-discard" name="banner" type="checkbox" value="0" />Отказываюсь от услуги
                                     </fieldset>
-                                    <fieldset>
-                                        10000 Lum / за 1 день (45000 р.)
-                                        <input name="projector[10000]" data-price="45000" value="0" type="text" class="step-tab-input projector" />
-                                    </fieldset>
-                                    <fieldset>
-                                        Экран 2,5 х 2,5 метра (4100 р.)
-                                        <input name="projector[screen]" data-price="4100" value="0" type="text" class="step-tab-input projector" />
-                                    </fieldset>
-                                    <fieldset>
-                                        Напольная панель  (5500 р.)
-                                        <input name="projector[floor_panel]" data-price="5500" value="0" type="text" class="step-tab-input projector" />
-                                    </fieldset>
-                                    <fieldset>
-                                        <input id="projector-discard" name="projector" type="checkbox" value="0" />Отказываюсь от услуги
-                                    </fieldset>
-                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
-                                    <input type="hidden" id="step5-set" value="0"/>
                                 </div>
                                 <div class="step-tab-panel" id="step6">
-                                    <label>Оборудование для конференций, АУДИО</label>
                                     <fieldset>
-                                        Микрофон (1500 р.)
-                                        <input name="audio[mocro]" data-price="1500" value="0" type="text" class="step-tab-input audio" />
+                                        Реклама на сайте <input type="text" name="radio-ads-count" class="step-tab-input radio-ads" />  шт.
                                     </fieldset>
                                     <fieldset>
-                                        Радиомикрофон (2700 р.)
-                                        <input name="audio[radiomicro]" data-price="2700" value="0" type="text" class="step-tab-input audio" />
+                                        Текст объявления <input type="text" name="radio-ads-text" class="step-tab-input radio-ads" width="80%"/>  шт.
                                     </fieldset>
                                     <fieldset>
-                                        Звук 1 кВт (14500 р.)
-                                        <input name="audio[1k]" data-price="14500" value="0" type="text" class="step-tab-input audio" />
+                                        <input id="radio-ads-discard" name="banner" type="checkbox" value="0" />Отказываюсь от услуги
                                     </fieldset>
-                                    <fieldset>
-                                        Звук 2 кВт (24000 р.)
-                                        <input name="audio[2k]" data-price="24000" value="0" type="text" class="step-tab-input audio" />
-                                    </fieldset>
-                                    <fieldset>
-                                        Мобильный комплект 600 вт  (11000 р.)
-                                        <input name="audio[mobile600k]" data-price="11000" value="0" type="text" class="step-tab-input audio" />
-                                    </fieldset>
-                                    <fieldset>
-                                        <input id="audio-discard" name="audio" type="checkbox" value="0" />Отказываюсь от услуги
-                                    </fieldset>
-                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
-                                    <input type="hidden" id="step6-set" value="0"/>
                                 </div>
-                                <div class="step-tab-panel" id="step7">
-                                    <fieldset>
-                                        <input type="checkbox" />Конференц зал
-                                    </fieldset></div>
                                 <div class="step-tab-panel" id="step8">
                                     <fieldset>
-                                        Радио объявления (750 руб.) <input type="text" class="step-tab-input" />  шт.
+                                        <input type="checkbox" />Интернет на стенде
                                     </fieldset>
                                 </div>
-                                <div class="step-tab-panel" id="step9">
-                                    <fieldset>
-                                        <input type="checkbox" />Интернет на стенде
-                                    </fieldset></div>
                     </div>
                     </fieldset>
                     </form>
