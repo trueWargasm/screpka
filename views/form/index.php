@@ -24,13 +24,12 @@ use yii\helpers\Html;
                     <label for="stand">Стенд</label>
                     <input name="stand"  required="required" type="text" placeholder="Стенд" id="stand">
 
-                    <label   for="width">Ширина</label>
-                    <input name="width" required="required" type="text" placeholder="Ширина" id="width">
+                    <label for="sqr">Площадь</label>
+                    <input name="sqr" required="required" type="text" placeholder="Площадь" id="width">
 
-                    <label for="length">Длинна</label>
-                    <input name="length" required="required" type="text" placeholder="Длинна" id="length">
                     <label for="Фамилия Имя Отчество">ФИО</label>
                     <input name="fio" required="required" type="text" placeholder="Фамилия Имя Отчество" id="fio">
+
                     <label for="email">Почта</label>
                     <input name="email" required="required" type="text" placeholder="Почта" id="email">
 

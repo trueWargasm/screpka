@@ -8,12 +8,12 @@ use yii\base\Model;
 
 class AnketaForm extends Model
 {
-    public $cmpny, $hall,  $stand, $width, $length, $email, $fio, $_csrf;
+    public $cmpny, $hall,  $stand, $width, $length, $email, $fio, $_csrf, $sqr;
 
     public function rules()
     {
         return [
-            [['cmpny', 'hall', 'stand', 'width', 'length', 'email', 'fio' ], 'required'],
+            [['cmpny', 'hall', 'stand', 'sqr', 'email', 'fio' ], 'required'],
             [['email'], 'email'],
             [['csrf'], 'safe']
         ];
@@ -28,7 +28,8 @@ class AnketaForm extends Model
             'width' => 'Ширина',
             'length' => 'Длина',
             'email' => 'Почта',
-            'fio' => 'ФИО'
+            'fio' => 'ФИО',
+            'sqr' => 'Площадь'
         ] ;
     }
 }

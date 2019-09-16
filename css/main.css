@@ -327,3 +327,8 @@ input[type="text"].step-tab-input {
 	display: inline-block;
 	width: 512px;
 }
+
+input.wl-input {
+	width: 250px;
+	margin-top: 10px;
+}

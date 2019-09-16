@@ -10,7 +10,16 @@ class BuildController extends \yii\web\Controller
     public $enableCsrfValidation = false;
 
     public function actionIndex(){
-        $session = Yii::$app->session;
+
+        if(Yii::$app->request->isPost) {
+            $session = Yii::$app->session;
+            $session["stand"] = [
+                "width" => (int) Yii::$app->request->post("width"),
+                "length" => (int) Yii::$app->request->post("length")
+                ];
+
+            return $this->redirect("./build/standart");
+        }
         return $this->render("index");
     }
 
@@ -34,10 +43,10 @@ class BuildController extends \yii\web\Controller
 
     public function actionStandart(){
         $session = Yii::$app->session;
-        $anketa = $session["anketa"];
+        $stand = $session["stand"];
 
-        $h= $anketa["width"];
-        $w=$anketa["length"];
+        $h= $stand["width"];
+        $w= $stand["length"];
         $this->layout = 'calc';
         return $this->render('empty', ['phpWidth' => $w, 'phpLength' => $h]);
 

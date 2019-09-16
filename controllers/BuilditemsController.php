@@ -13,8 +13,7 @@ class BuilditemsController extends \yii\web\Controller
         $session = Yii::$app->session;
         $anketa = $session["anketa"];
 
-        $h = $anketa["width"];
-        $w =$anketa["length"];
+        $sqr = $anketa["sqr"];
 
         $headers = \Yii::$app->response->headers;
         $headers->set ('Access-Control-Allow-Origin', 'http://skrepka.demo');

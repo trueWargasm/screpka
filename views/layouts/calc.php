@@ -1,3 +1,17 @@
+<?php
+
+/* @var $this \yii\web\View */
+/* @var $content string */
+
+use app\widgets\Alert;
+use yii\helpers\Html;
+use yii\bootstrap\NavBar;
+use yii\widgets\Breadcrumbs;
+use app\assets\AppAsset;
+
+AppAsset::register($this);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +29,7 @@
 
 </head>
 <body>
+<?= $content ?>
 <div class="container">
     <div class="row">
         <div class="item-canvas">
