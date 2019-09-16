@@ -1,6 +1,5 @@
 header {
-	background: #f4f5f6;
-	border-bottom: .1rem solid #d1d1d1;
+	background: #2a3549;
 	display: block;
 	left: 0;
 	max-width: 100%;
@@ -8,6 +7,15 @@ header {
 	top: 0;
 	width: 100%;
 	z-index: 1;
+}
+
+.btn-success {
+	background-color:  #2a3549;
+}
+
+.btn-success:hover {
+	background-color: #2a3549;
+	color: #d35400;
 }
 
 body {
@@ -29,7 +37,7 @@ body {
 .logo {
 	width: 204px;
 	font-size: 32px;
-	color: #5cb85c;
+	color: #fafafa;
 }
 
 .welcome-title {
@@ -303,4 +311,19 @@ input[type="text"].step-tab-input {
 		flex: 1 1 auto;
 		max-width: 100%;
 	}
+}
+
+.bld_choose {
+	text-align: center;
+}
+
+.bld_choose img{
+	width: 512px;
+	margin: 0;
+}
+
+.bld_choose a{
+	margin-top: 5px;
+	display: inline-block;
+	width: 512px;
 }

@@ -34,7 +34,7 @@ use yii\helpers\Html;
                     <label for="email">Почта</label>
                     <input name="email" required="required" type="text" placeholder="Почта" id="email">
 
-                    <input class="button" type="submit" value="Отправить">
+                    <input class="btn btn-success" type="submit" value="Отправить">
                 </fieldset>
             </form>
         </div>

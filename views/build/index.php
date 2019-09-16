@@ -7,14 +7,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="column column-25">
+        <div class="column column-50 bld_choose" >
+            <img src="/img/blds/selfbuild.jpg"/>
             <a class="button" href="/build/custom">Самостоятельная</a>
         </div>
-    </div>
-    <div class="row">
-
-        <div class="column column-25">
-            <a class="button" href="/build/standart">Стандартная</a>
+        <div class="column column-50 bld_choose">
+            <img src="/img/blds/standartbuild.jpg"/>
+            <a class="button"  href="/build/standart">Стандартная</a>
         </div>
     </div>
+
 </div>

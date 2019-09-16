@@ -32,7 +32,7 @@ AppAsset::register($this);
     <div class="container">
         <div class="row">
             <div class="column header-column">
-                <a href="." class="logo">Skrepka Expo</a>
+                <a href="https://skrepkaexpo.ru" class="logo">Skrepka Expo</a>
             </div>
         </div>
     </div>
