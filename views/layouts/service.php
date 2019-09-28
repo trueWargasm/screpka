@@ -51,12 +51,13 @@ AppAsset::register($this);
         transitionEffect: "slideLeft",
         onStepChanging: function (event, currentIndex, newIndex)
         {
-            var stepOk = $("#step" + currentIndex +"-set").val();
-            alert("#step" + currentIndex +"-set = " + stepOk);
-            return stepOk == 1;
+
+            alert("#step");
+
         },
         onFinish: function () {
             console.log('Wizard Completed');
+            $("form", this).submit();
         }
     });
 </script>

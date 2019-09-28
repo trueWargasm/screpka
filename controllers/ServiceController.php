@@ -9,17 +9,19 @@ use app\models\ServiceForm;
 class ServiceController  extends \yii\web\Controller
 {
     public function actionIndex(){
-        $formModel = new ServiceForm();
         $session = \Yii::$app->session;
 
-        $anketa = $session["anketa"];
-        $h = $anketa["width"];
-        $w = $anketa["length"];
+        if(\Yii::$app->request->getIsPost()) {
+            $session["service"] = json_encode(\Yii::$app->request->post());
+        }
+
+        $stand = $session["stand"];
+        $h = $stand["width"];
+        $w = $stand["length"];
 
         $sqr = $w*$h;
 
-        $formModel->square = $sqr;
         $this->layout = 'service';
-        return $this->render('index', ["formModel" => $formModel, "sqr" => $sqr ]);
+        return $this->render('index', ["sqr" => $sqr ]);
     }
 }

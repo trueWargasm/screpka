@@ -1,8 +1,12 @@
 	$('#steps').steps({
 	      onFinish: function () {
+
+
 	        console.log('Wizard Completed');
+
 	      }
 	    });
+
 
 	    var stepBtnNext = $('.step-btn.next');
 	    var stepBtnPrev = $('.step-btn.prev');

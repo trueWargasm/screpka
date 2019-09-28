@@ -39,7 +39,7 @@ $('#pass-to-gates-discard').change(
     });
 
 
-$('.pass-to-gates').change(
+$('.pass-to-gates').keyup(
     function(){
         $('#step2-set').val(1);
         window.total_price.pass_to_gates = ($('.pass-to-gates[name="pass[van]"]').val() * 5700) + ($('.pass-to-gates[name="pass[car]"]').val() * 2700);
@@ -58,7 +58,7 @@ $('#vip-parking-discard').change(
     });
 
 
-$('.vip-parking').change(
+$('.vip-parking').keyup(
     function(){
         $('#step2-set').val(1);
         window.total_price.vip_parking = ($('.vip-parking:first').val() * 10000);
@@ -113,53 +113,91 @@ $('.advert-banners').change(
         window.recalc();
     });
 
-//Projector
-$('#projector-discard').change(
+//Site banner advertising
+$('#site-ads-discard').change(
     function(){
         if ($(this).is(':checked')) {
-            $('.projector').val(0);
-            window.total_price.projector = 0;
+            $('.site-ads').prop("checked", false);
+            $(".site-ads-info").css("display", "none");
+        }
+    });
+
+$('.site-ads').change(
+    function(){
+        $('#site-ads-discard').prop("checked", false);
+        $(".site-ads-info").css("display", "none");
+        $("#site-ads-info-" + this.value).css("display", "block");
+    }
+)
+
+//Conference hall
+$('#conference-hall-discard').change(
+    function(){
+        if ($(this).is(':checked')) {
+            $('#conference-hall').prop("checked", false);
+        }
+    });
+
+$('#conference-hall').change(
+    function(){
+        $('#conference-hall-discard').prop("checked", false);
+    }
+)
+
+//internet
+$('#internet-discard').change(
+    function(){
+        if ($(this).is(':checked')) {
+            $('#internet-discard').prop("checked", false);
+            window.total_price.internet = 0
+            $('.internet-type').val(0);
         }
         window.recalc();
     });
 
-
-$('.projector').change(
+$('.internet-type').keyup(
     function(){
+        internet_price = 0;
 
-        //количество
-        projector = 0;
-        $.each($('.projector[type="text"]'), function(index, item){
-            projector = projector + ($(item).data('price') *  $(item).val());
+        $('#conference-hall-discard').prop("checked", false);
+        $.each($('.internet-type'), function(index, item){
+            internet_price = internet_price + ($(item).data('price') * $(item).val());
         })
-        window.total_price.projector = projector;
+        window.total_price.internet = internet_price;
 
-        $('#projector-discard').prop("checked", false);
         window.recalc();
-    });
+    }
+)
 
-
-//audio
-$('#audio-discard').change(
+//radio radio-ads-discard
+$('#radio-ads-discard').change(
     function(){
         if ($(this).is(':checked')) {
-            $('.audio').val(0);
-            window.total_price.audio = 0;
+            window.total_price.radio_ads = 0
+            $('.radio-ads').val('');
         }
         window.recalc();
     });
 
-
-$('.audio').change(
+$('.radio-ads').keyup(
     function(){
+        radio_ads = 0;
 
-        //количество
-        audio = 0;
-        $.each($('.audio[type="text"]'), function(index, item){
-            audio = audio + ($(item).data('price') *  $(item).val());
-        })
-        window.total_price.audio = audio;
+        count_ads = parseInt($(".radio-ads[name='radio-ads-count']").val(), 10);
+        if(isNaN(count_ads) ) count_ads = 0;
 
-        $('#audio-discard').prop("checked", false);
+        if(count_ads == 0) {
+            $(".radio-ads[name='radio-ads-count']").val(1)
+        } else {
+            $(".radio-ads[name='radio-ads-count']").val(count_ads)
+        }
+
+        $('#radio-ads-discard').prop("checked", false);
+
+        radio_ads = radio_ads + ($(".radio-ads[name='radio-ads-count']").val() * 750);
+
+        window.total_price.radio_ads = radio_ads;
+
         window.recalc();
-    });
+    }
+)
