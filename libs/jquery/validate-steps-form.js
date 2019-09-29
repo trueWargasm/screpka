@@ -1,157 +1,304 @@
-	$('#steps').steps({
-	      onFinish: function () {
+    var steps = $('#steps');
+    var step1ErrMsg = $('#step1ErrMsg');
 
+    var step1 = $('#step1');
+    var step2 = $('#step2');
+    var step3 = $('#step3');
+    var step4 = $('#step4');
+    var step5 = $('#step5');
+    var step6 = $('#step6');
+    var step7 = $('#step7');
+    var step8 = $('#step8');
 
-	        console.log('Wizard Completed');
+    var btnNext = $('button[data-direction="next"]');
+    var btnPrev = $('button[data-direction="prev"]');
+    var btnFinish = $('button[data-direction="finish"]');
 
-	      }
-	    });
+    btnNext.attr("disabled",true);
+    btnPrev.attr("disabled",true);
 
+    //STEP1
+    step1.addClass('activeStep');
 
-	    var stepBtnNext = $('.step-btn.next');
-	    var stepBtnPrev = $('.step-btn.prev');
-	    var stepBtnFinish = $('.step-btn.finish');
+    var step1Validate = function() {
+        if ($('#step1 input[type=checkbox]:checked').length == 0) {
+            btnNext.attr("disabled",true);
+        }
+        else {
+            btnNext.attr("disabled",false);
+        }
+    }
 
-	    var step1 = $('#step1');
-	    var step2 = $('#step2');
-	    var step3 = $('#step3');
-	    var step4 = $('#step4');
-	    var step5 = $('#step5');
-	    var step6 = $('#step6');
-	    var step7 = $('#step7');
-	    var step8 = $('#step8');
+    $('#step1 input[type=checkbox]').change(function () {
+        step1Validate()
+    });
+    //END STEP1
 
-	    var refuse1 = $('#refuse1');
-	    var refuse2 = $('#refuse2');
-	    var refuse3 = $('#refuse3');
-	    var refuse4 = $('#refuse4');
-	    var refuse5 = $('#refuse5');
-	    var refuse6 = $('#refuse6');
-	    var refuse7 = $('#refuse7');
-	    var refuse8 = $('#refuse8');
+    //STEP2
+    var step2Validate = function() {
+        var inputs = $('#step2 input[type=text]');
+        var emptyInput = 0;
+        for(var i = 0; i < inputs.length; i++) {
+            if(inputs[i].value != '') {
+                emptyInput++
+            }
+        }
+        
+        if($('#step2 input[type=checkbox]:checked').length == 0) {
+            if(emptyInput == 0) {
+                btnNext.attr("disabled",true);
+            } else {
+                btnNext.attr("disabled",false);
+            }
+        } else {
+            btnNext.attr("disabled",false);
+        }
+    }
 
-	    var day1 = $('#day1');
-	    var day2 = $('#day2');
-	    var day3 = $('#day3');
-	    var gates1 = $('#gates1');
-	    var gates2 = $('#gates2');
-	    var parking1 = $('#parking1');
-	    var billboard = $('#billboard');
-	    var proektor = $('#proektor');
-	    var audio = $('#audio');
-	    var hole = $('#hole');
-	    var radio = $('#radio');
-	    var net = $('#net');
+    $('#step2 input[type=checkbox]').change(function () {
+        step2Validate();
+    });
 
-	    function propChecked(item) {
-	    	return item.prop('checked');
-	    }
+    $('#step2 input[type=text]').bind('input', function() {
+        var replace = $(this).val().replace(/[^\+\d]/g, '');
+        $(this).val(replace);
+        step2Validate();
+    });
+    //END STEP2
 
-	    function emptyField(item) {
-	    	return item.val();
-	    }
+    //STEP3
+    var step3Validate = function() {
+        var input = $('#step3 input[type=text]');
+        
+        if($('#step3 input[type=checkbox]:checked').length == 0) {
+            if(input[0].value == '') {
+                btnNext.attr("disabled",true);
+            } else {
+                btnNext.attr("disabled",false);
+            }
+        } else {
+            btnNext.attr("disabled",false);
+        }
+    }
+    $('#step3 input[type=checkbox]').change(function () {
+        step3Validate();
+    });
 
-	    if( !propChecked(refuse1)
-	    	&& !propChecked(day1)
-	    	&& !propChecked(day2)
-	    	&& !propChecked(day3)) {
-	    	stepBtnNext.prop('disabled', true);
-	    } else {
-	    	stepBtnNext.prop('disabled', false);
-	    }
+    $('#step3 input[type=text]').bind('input', function() {
+        var replace = $(this).val().replace(/[^\+\d]/g, '');
+        $(this).val(replace);
+        step3Validate();
+    });
+    //END STEP3
 
-	    if(step2.hasClass('active')) {
-			if( !emptyField(gates1) && !emptyField(gates2)) {
-				stepBtnNext.prop('disabled', true);
-			} else {
-				stepBtnNext.prop('disabled', false);
-			}
-		} else if(step7.hasClass('active')) {
-			if( !emptyField(radio)) {
-				stepBtnNext.prop('disabled', true);
-			} else {
-				stepBtnNext.prop('disabled', false);
-			}
-		}
+    //STEP4
+    var step4Validate = function() {
+        var inputs = $('#step4 input[type=text]');
+        var emptyInput = 0;
+        for(var i = 0; i < inputs.length; i++) {
+            if(inputs[i].value != '') {
+                emptyInput++
+            }
+        }
+        
+        if($('#step4 input[type=checkbox]:checked').length == 0) {
+            if(emptyInput == 0) {
+                btnNext.attr("disabled",true);
+            } else {
+                btnNext.attr("disabled",false);
+            }
+        } else {
+            btnNext.attr("disabled",false);
+        }
+    }
+    $('#step4 input[type=checkbox]').change(function () {
+        step4Validate();
+    });
 
-	    $("input[type=text]").on('change', function () {
-	    	if(step2.hasClass('active')) {
-		    	if( !emptyField(gates1) && !emptyField(gates2)) {
-			    	stepBtnNext.prop('disabled', true);
-			    } else {
-			    	stepBtnNext.prop('disabled', false);
-			    }
-		    } else if(step7.hasClass('active')) {
-		    	if( !emptyField(radio)) {
-			    	stepBtnNext.prop('disabled', true);
-			    } else {
-			    	stepBtnNext.prop('disabled', false);
-			    }
-		    }
-	    });
+    $('#step4 input[type=text]').bind('input', function() {
+        var replace = $(this).val().replace(/[^\+\d]/g, '');
+        $(this).val(replace);
+        step4Validate();
+    });
+    //END STEP4
 
-	    $("input[type=checkbox]").on('change', function () {
-		    var self = $(this);
+    //STEP5
+    var step5Validate = function() {
+        if($('#step5 input[type=checkbox]:checked').length == 0) {
+            btnNext.attr("disabled",true);
+        } else {
+            btnNext.attr("disabled",false);
+        }
+    }
+    $('#step5 input[type=checkbox]').change(function () {
+        step5Validate();
+    });
+    //END STEP5
 
-		    if(step1.hasClass('active')) {
-		    	if( !propChecked(refuse1)
-			    	&& !propChecked(day1)
-			    	&& !propChecked(day2)
-			    	&& !propChecked(day3)) {
-			    	stepBtnNext.prop('disabled', true);
-			    } else {
-			    	stepBtnNext.prop('disabled', false);
-			    }
-		    } else if(step2.hasClass('active')) {
-		    	if( !propChecked(refuse2) 
-		    		&& !emptyField(gates1)
-		    		&& !emptyField(gates2)) {
-			    	stepBtnNext.prop('disabled', true);
-			    } else {
-			    	stepBtnNext.prop('disabled', false);
-			    }
-		    } else if(step3.hasClass('active')) {
-		    	if( !propChecked(refuse3) 
-		    		&& !propChecked(parking1)) {
-			    	stepBtnNext.prop('disabled', true);
-			    } else {
-			    	stepBtnNext.prop('disabled', false);
-			    }
-		    } else if(step4.hasClass('active')) {
-		    	if( !propChecked(refuse4) 
-		    		&& !propChecked(billboard)) {
-			    	stepBtnNext.prop('disabled', true);
-			    } else {
-			    	stepBtnNext.prop('disabled', false);
-			    }
-		    } else if(step5.hasClass('active')) {
-		    	if( !propChecked(refuse5) 
-		    		&& !propChecked(proektor)
-		    		&& !propChecked(audio)) {
-			    	stepBtnNext.prop('disabled', true);
-			    } else {
-			    	stepBtnNext.prop('disabled', false);
-			    }
-		    } else if(step6.hasClass('active')) {
-		    	if( !propChecked(refuse6) 
-		    		&& !propChecked(hole)) {
-			    	stepBtnNext.prop('disabled', true);
-			    } else {
-			    	stepBtnNext.prop('disabled', false);
-			    }
-		    } else if(step7.hasClass('active')) {
-		    	if( !propChecked(refuse7) 
-		    		&& !emptyField(radio)) {
-			    	stepBtnNext.prop('disabled', true);
-			    } else {
-			    	stepBtnNext.prop('disabled', false);
-			    }
-		    } else if(step8.hasClass('active')) {
-		    	if( !propChecked(refuse8) 
-		    		&& !propChecked(net)) {
-			    	stepBtnFinish.prop('disabled', true);
-			    } else {
-			    	stepBtnFinish.prop('disabled', false);
-			    }
-		    }
-		});
+    //STEP6
+    var step6Validate = function() {
+        var inputs = $('#step6 input[type=text]');
+        var emptyInput = 0;
+        for(var i = 0; i < inputs.length; i++) {
+            if(inputs[i].value != '') {
+                emptyInput++
+            }
+        }
+        
+        if($('#step6 input[type=checkbox]:checked').length == 0) {
+            if(emptyInput == 0) {
+                btnNext.attr("disabled",true);
+            } else {
+                btnNext.attr("disabled",false);
+            }
+        } else {
+            btnNext.attr("disabled",false);
+        }
+    }
+
+    $('#step6 input[type=checkbox]').change(function () {
+        step6Validate();
+    });
+
+    $('#step6 input[type=text]').bind('input', function() {
+        var replace = $(this).val().replace(/[^\+\d]/g, '');
+        $(this).val(replace);
+        step6Validate();
+    });
+    //END STEP6
+
+    //STEP7
+    var step7Validate = function() {
+        var inputs = $('#step7 input[type=text]');
+        var emptyInput = 0;
+        for(var i = 0; i < inputs.length; i++) {
+            if(inputs[i].value != '') {
+                emptyInput++
+            }
+        }
+        
+        if($('#step7 input[type=checkbox]:checked').length == 0) {
+            if(emptyInput == 0) {
+                btnNext.attr("disabled",true);
+            } else {
+                btnNext.attr("disabled",false);
+            }
+        } else {
+            btnNext.attr("disabled",false);
+        }
+    }
+
+    $('#step7 input[type=checkbox]').change(function () {
+        step7Validate();
+    });
+
+    $('#step7 input[type=text]').bind('input', function() {
+        var replace = $(this).val().replace(/[^\+\d]/g, '');
+        $(this).val(replace);
+        step7Validate();
+    });
+    //END STEP7
+
+    var stepper = function(direction) {
+        var id = steps.find('.activeStep')[0].id;
+        if(direction === 'next') {
+            btnNext.attr("disabled",true);
+            switch(id) {
+                case 'step1':
+                    step1.removeClass('activeStep');
+                    step2.addClass('activeStep');
+                    btnPrev.attr("disabled",false);
+                    step2Validate();
+                    break;
+                case 'step2':
+                    step2.removeClass('activeStep');
+                    step3.addClass('activeStep');
+                    step3Validate();
+                    break;
+                case 'step3':
+                    step3.removeClass('activeStep');
+                    step4.addClass('activeStep');
+                    step4Validate();
+                    break;
+                case 'step4':
+                    step4.removeClass('activeStep');
+                    step5.addClass('activeStep');
+                    step5Validate();
+                    break;
+                case 'step5':
+                    step5.removeClass('activeStep');
+                    step6.addClass('activeStep');
+                    step6Validate();
+                    break;
+                case 'step6':
+                    step6.removeClass('activeStep');
+                    step7.addClass('activeStep');
+                    step7Validate();
+                    break;
+                case 'step7':
+                    step7.removeClass('activeStep');
+                    step8.addClass('activeStep');
+                    btnNext.removeClass('visible');
+                    btnFinish.addClass('visible');
+                    break;
+            }
+        } else {
+            switch(id) {
+                case 'step1':
+                    break;
+                case 'step2':
+                    step2.removeClass('activeStep');
+                    step1.addClass('activeStep');
+                    btnPrev.attr("disabled",true);
+                    step1Validate();
+                    break;
+                case 'step3':
+                    step3.removeClass('activeStep');
+                    step2.addClass('activeStep');
+                    step2Validate();
+                    break;
+                case 'step4':
+                    step4.removeClass('activeStep');
+                    step3.addClass('activeStep');
+                    step3Validate();
+                    break;
+                case 'step5':
+                    step5.removeClass('activeStep');
+                    step4.addClass('activeStep');
+                    step4Validate();
+                    break;
+                case 'step6':
+                    step6.removeClass('activeStep');
+                    step5.addClass('activeStep');
+                    step5Validate();
+                    break;
+                case 'step7':
+                    step7.removeClass('activeStep');
+                    step6.addClass('activeStep');
+                    step6Validate();
+                    break;
+                case 'step8':
+                    step8.removeClass('activeStep');
+                    step7.addClass('activeStep');
+                    btnNext.addClass('visible');
+                    btnFinish.removeClass('visible');
+                    step7Validate();
+                    break;
+            }
+        }
+    }
+
+    btnNext.on('click', function(e) {
+        e.preventDefault();
+        stepper('next');
+    })
+
+    btnPrev.on('click', function(e) {
+        e.preventDefault();
+        stepper('prev');
+    })
+
+    btnFinish.on('click', function(e) {
+        e.preventDefault();
+        $('#form').submit();
+    })

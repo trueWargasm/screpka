@@ -247,14 +247,16 @@ textarea {
 label,
 legend {
   display: block;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 5px;
+  сolor: #4f4f4f;
 }
 
 fieldset {
   border-width: 0;
   padding: 0;
+  color: #777;
 }
 
 input[type='checkbox'],

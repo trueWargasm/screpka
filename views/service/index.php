@@ -20,24 +20,25 @@ use yii\helpers\Html;
                 <div class="step-app">
                     <div>
                         <ul class="step-steps">
-                            <li><a href="#step1">Уборка</a></li>
-                            <li><a href="#step2">Пропуск к монтажным воротам</a></li>
-                            <li><a href="#step3">VIP парковка</a></li>
-                            <li><a href="#step4">Наружная реклама</a></li>
-                            <li><a href="#step5">Конференц зал</a></li>
-                            <li><a href="#step6">Радио объявления</a></li>
-                            <li><a href="#step7">Реклама на сайте</a></li>
-                            <li><a href="#step8">Интернет на стенде</a></li>
+                            <li class="step-item">Уборка</li>
+                            <li class="step-item">Пропуск к монтажным воротам</li>
+                            <li class="step-item">VIP парковка</li>
+                            <li class="step-item">Наружная реклама</li>
+                            <li class="step-item">Оборудование для конференций, ПРОЕКТОР</li>
+                            <li class="step-item">Оборудование для конференций, АУДИО</li>
+                            <li class="step-item">Конференц зал</li>
+                            <li class="step-item">Радио объявления</li>
+                            <li class="step-item">Интернет на стенде</li>
                         </ul>
                         <div class="step-footer">
                             <p class="total-price">Стоимость дополнительных услуг:<span id="add_service">0</span> р.</p>
-                            <button data-direction="prev" class="step-btn">Назад</button>
-                            <button data-direction="next" class="step-btn">Далее</button>
-                            <button data-direction="finish" class="step-btn">Отправить</button>
+                            <button class="btn prev visible" data-direction="prev">Назад</button>
+                            <button class="btn next visible" data-direction="next">Далее</button>
+                            <button class="btn finish" data-direction="finish">Отправить</button>
                         </div>
                     </div>
                     <div class="step-content">
-                        <form action="/service" method="post">
+                        <form action="/service" method="post" id="form">
                             <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                             <div class="step-fieldset">
                                 <div class="step-tab-panel" id="step1">
@@ -57,8 +58,6 @@ use yii\helpers\Html;
                                     <fieldset>
                                         <input id="cleanup-discard" name="cleanup[]" type="checkbox" value="0" />Отказываюсь от услуги
                                     </fieldset>
-                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
-                                    <input type="hidden" id="step1-set" value="0"/>
                                 </div>
                                 <div class="step-tab-panel" id="step2">
                                     <label>Пропуск к монтажным воротам</label>
@@ -76,8 +75,6 @@ use yii\helpers\Html;
                                     <fieldset>
                                         <input id="pass-to-gates-discard" name="pass[]" type="checkbox" value="0" />Отказываюсь от услуги
                                     </fieldset>
-                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
-                                    <input type="hidden" id="step2-set" value="0"/>
                                 </div>
                                 <div class="step-tab-panel" id="step3">
                                     <label>VIP парковка</label>
@@ -92,8 +89,6 @@ use yii\helpers\Html;
                                     <fieldset>
                                         <input id="vip-parking-discard" name="vip" type="checkbox" value="0" />Отказываюсь от услуги
                                     </fieldset>
-                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
-                                    <input type="hidden" id="step3-set" value="0"/>
                                 </div>
                                 <div class="step-tab-panel" id="step4">
                                     <label>Наружняя реклама</label>
@@ -123,8 +118,6 @@ use yii\helpers\Html;
                                     <fieldset>
                                         <input id="advert-banners-discard" name="banner" type="checkbox" value="0" />Отказываюсь от услуги
                                     </fieldset>
-                                    <!-- Параметр для залочивания шага пока не выбран хотябы один пункт -->
-                                    <input type="hidden" id="step4-set" value="0"/>
                                 </div>
                                 <div class="step-tab-panel" id="step5">
                                     <label>Конференц зал</label>

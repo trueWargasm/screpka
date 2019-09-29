@@ -124,7 +124,6 @@ a.desc:after {
 }
 
 .step-disclaimer {
-    font-size: 90%;
-    padding: 10px;
-    background-color: #3cb371;
+    font-size: 20px;
+    padding: 0;
 }
