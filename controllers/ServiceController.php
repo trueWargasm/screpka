@@ -1,8 +1,6 @@
 <?php
 
-
 namespace app\controllers;
-
 
 use app\models\ServiceForm;
 
@@ -13,6 +11,8 @@ class ServiceController  extends \yii\web\Controller
 
         if(\Yii::$app->request->getIsPost()) {
             $session["service"] = json_encode(\Yii::$app->request->post());
+
+            return $this->redirect("/order/verify");
         }
 
         $stand = $session["stand"];

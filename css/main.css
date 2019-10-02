@@ -75,7 +75,7 @@ body {
 }
 
 .bottom-canvas,
-.title-canvas {
+.item-canvas, title-canvas {
 	font-size:30px;
 	margin:15px auto
 }

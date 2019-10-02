@@ -30,6 +30,11 @@ AppAsset::register($this);
 </head>
 <body>
 <?= $content ?>
+<div class="row">
+    <div class="column column-33"><input class="wl-input" type="text" name="text" placeholder="Надпись на фризе, до 9 знаков бесплатно"/></div>
+    <div class="column column-33"><input class="wl-input" type="text" name="color" placeholder="Цвет"/></div>
+    <div class="column column-33"><input class="wl-input" type="text" name="count" placeholder="Количество"/></div>
+</div>
 <div class="container">
     <div class="row">
         <div class="item-canvas">

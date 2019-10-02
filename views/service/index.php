@@ -224,7 +224,7 @@ use yii\helpers\Html;
                                     <label>Интернет на стенде</label>
                                     <fieldset>
                                         <input type="hidden" name="internet" value="no" />
-                                        <input type="checkbox" name="internet" value="yes" />Интернет на стенде
+                                        <input type="checkbox" name="internet" value="yes" class="step-tab-input internet-type"\    />Интернет на стенде
                                     </fieldset>
                                     <fieldset>
                                         <input name="internet[whire]" data-price="25000" value="0" type="text" class="step-tab-input internet-type" /> Проводной интернет (скорость до 4 м/бит в сек)
@@ -233,11 +233,12 @@ use yii\helpers\Html;
                                         <input name="internet[wifi]" data-price="4000" value="0" type="text" class="step-tab-input internet-type" /> WI-FI (скорость до 1 мбит в сек.)
                                     </fieldset>
                                     <fieldset>
-                                        <input id="internet-discard" type="checkbox"/>Отказываюсь от услуги
+                                        <input id="internet-discard" type="checkbox" name="internet"/>Отказываюсь от услуги
                                     </fieldset>
                                 </div>
                     </div>
                     </fieldset>
+                            <input id="service-total" type="hidden" name="service-total" value="0"/>
                     </form>
 
                 </div>

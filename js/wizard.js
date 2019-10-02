@@ -6,6 +6,7 @@ function recalc(){
         sub_total = sub_total + value;
     });
     $("#add_service").html( sub_total );
+    $("#service-total").val( sub_total )
 }
 // Уборка
 $('#cleanup-discard').change(
@@ -148,7 +149,7 @@ $('#conference-hall').change(
 $('#internet-discard').change(
     function(){
         if ($(this).is(':checked')) {
-            $('#internet-discard').prop("checked", false);
+            $('.internet-type').prop("checked", false);
             window.total_price.internet = 0
             $('.internet-type').val(0);
         }
