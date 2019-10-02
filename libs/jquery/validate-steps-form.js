@@ -10,12 +10,22 @@
     var step7 = $('#step7');
     var step8 = $('#step8');
 
+    var stepItem1 = $('#stepItem1');
+    var stepItem2 = $('#stepItem2');
+    var stepItem3 = $('#stepItem3');
+    var stepItem4 = $('#stepItem4');
+    var stepItem5 = $('#stepItem5');
+    var stepItem6 = $('#stepItem6');
+    var stepItem7 = $('#stepItem7');
+    var stepItem8 = $('#stepItem8');
+
     var btnNext = $('button[data-direction="next"]');
     var btnPrev = $('button[data-direction="prev"]');
     var btnFinish = $('button[data-direction="finish"]');
 
     btnNext.attr("disabled",true);
     btnPrev.attr("disabled",true);
+    stepItem1.addClass('activeItem');
 
     //STEP1
     step1.addClass('activeStep');
@@ -207,37 +217,44 @@
                 case 'step1':
                     step1.removeClass('activeStep');
                     step2.addClass('activeStep');
+                    stepItem2.addClass('activeItem');
                     btnPrev.attr("disabled",false);
                     step2Validate();
                     break;
                 case 'step2':
                     step2.removeClass('activeStep');
                     step3.addClass('activeStep');
+                    stepItem3.addClass('activeItem');
                     step3Validate();
                     break;
                 case 'step3':
                     step3.removeClass('activeStep');
                     step4.addClass('activeStep');
+                    stepItem4.addClass('activeItem');
                     step4Validate();
                     break;
                 case 'step4':
                     step4.removeClass('activeStep');
                     step5.addClass('activeStep');
+                    stepItem5.addClass('activeItem');
                     step5Validate();
                     break;
                 case 'step5':
                     step5.removeClass('activeStep');
                     step6.addClass('activeStep');
+                    stepItem6.addClass('activeItem');
                     step6Validate();
                     break;
                 case 'step6':
                     step6.removeClass('activeStep');
                     step7.addClass('activeStep');
+                    stepItem7.addClass('activeItem');
                     step7Validate();
                     break;
                 case 'step7':
                     step7.removeClass('activeStep');
                     step8.addClass('activeStep');
+                    stepItem8.addClass('activeItem');
                     btnNext.removeClass('visible');
                     btnFinish.addClass('visible');
                     break;
@@ -248,37 +265,44 @@
                     break;
                 case 'step2':
                     step2.removeClass('activeStep');
+                    stepItem2.removeClass('activeItem');
                     step1.addClass('activeStep');
                     btnPrev.attr("disabled",true);
                     step1Validate();
                     break;
                 case 'step3':
                     step3.removeClass('activeStep');
+                    stepItem3.removeClass('activeItem');
                     step2.addClass('activeStep');
                     step2Validate();
                     break;
                 case 'step4':
                     step4.removeClass('activeStep');
+                    stepItem4.removeClass('activeItem');
                     step3.addClass('activeStep');
                     step3Validate();
                     break;
                 case 'step5':
                     step5.removeClass('activeStep');
+                    stepItem5.removeClass('activeItem');
                     step4.addClass('activeStep');
                     step4Validate();
                     break;
                 case 'step6':
                     step6.removeClass('activeStep');
+                    stepItem6.removeClass('activeItem');
                     step5.addClass('activeStep');
                     step5Validate();
                     break;
                 case 'step7':
                     step7.removeClass('activeStep');
+                    stepItem7.removeClass('activeItem');
                     step6.addClass('activeStep');
                     step6Validate();
                     break;
                 case 'step8':
                     step8.removeClass('activeStep');
+                    stepItem8.removeClass('activeItem');
                     step7.addClass('activeStep');
                     btnNext.addClass('visible');
                     btnFinish.removeClass('visible');

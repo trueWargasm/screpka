@@ -23,11 +23,17 @@
     overflow: hidden;
     width: 100%;
     max-width: 245px;
+    background-color: #f0f0f0;
+}
+.step-item.activeItem {
+    background-color: #2a3549;
+    color: #d35400;
 }
 .step-steps > li {
     list-style: none;
     flex: 1;
     margin-bottom: 0;
+    padding: 6px 10px;
 }
 .step-steps > li:last-child a {
     border: none;
@@ -80,6 +86,9 @@
 }
 .btn.finish.visible, .btn.next.visible, .btn.prev.visible {
     display: inline-block;
+}
+.btn.finish:hover, .btn.next:hover, .btn.prev:hover {
+    color: #d35400;
 }
 .step-footer {
     margin-top: 15px;

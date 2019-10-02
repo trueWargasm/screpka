@@ -20,15 +20,15 @@ use yii\helpers\Html;
                 <div class="step-app">
                     <div>
                         <ul class="step-steps">
-                            <li class="step-item">Уборка</li>
-                            <li class="step-item">Пропуск к монтажным воротам</li>
-                            <li class="step-item">VIP парковка</li>
-                            <li class="step-item">Наружная реклама</li>
-                            <li class="step-item">Оборудование для конференций, ПРОЕКТОР</li>
-                            <li class="step-item">Оборудование для конференций, АУДИО</li>
-                            <li class="step-item">Конференц зал</li>
-                            <li class="step-item">Радио объявления</li>
-                            <li class="step-item">Интернет на стенде</li>
+                            <li id="stepItem1" class="step-item">Уборка</li>
+                            <li id="stepItem2" class="step-item">Пропуск к монтажным воротам</li>
+                            <li id="stepItem3" class="step-item">VIP парковка</li>
+                            <li id="stepItem4" class="step-item">Наружная реклама</li>
+                            <li id="stepItem5" class="step-item">Оборудование для конференций, ПРОЕКТОР</li>
+                            <li id="stepItem6" class="step-item">Оборудование для конференций, АУДИО</li>
+                            <li id="stepItem7" class="step-item">Конференц зал</li>
+                            <li id="stepItem8" class="step-item">Радио объявления</li>
+                            <li id="stepItem9" class="step-item">Интернет на стенде</li>
                         </ul>
                         <div class="step-footer">
                             <p class="total-price">Стоимость дополнительных услуг:<span id="add_service">0</span> р.</p>
