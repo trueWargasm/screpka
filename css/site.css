@@ -116,6 +116,7 @@ a.desc:after {
 
 .total-price {
     font-weight: bold;
+    line-height: 1.3;
 }
 
 .total-price span {
@@ -124,7 +125,6 @@ a.desc:after {
 }
 
 .step-disclaimer {
-    font-size: 90%;
-    padding: 10px;
-    background-color: #3cb371;
+    font-size: 20px;
+    padding: 0;
 }

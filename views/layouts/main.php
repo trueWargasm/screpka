@@ -29,10 +29,12 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <header>
-    <div class="container">
+    <div class="header-column-wrap">
         <div class="row">
             <div class="column header-column">
-                <a href="https://skrepkaexpo.ru" class="logo">Skrepka Expo</a>
+                <a href="." class="logo">
+                    <img src="./img/logo.png" alt="Logo">
+                </a>
             </div>
         </div>
     </div>

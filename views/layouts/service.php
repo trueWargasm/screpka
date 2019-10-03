@@ -29,10 +29,12 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <header>
-    <div class="container">
+    <div class="header-column-wrap">
         <div class="row">
             <div class="column header-column">
-                <a href="." class="logo">Skrepka Expo</a>
+                <a href="." class="logo">
+                    <img src="./img/logo.png" alt="Logo">
+                </a>
             </div>
         </div>
     </div>
@@ -45,22 +47,7 @@ AppAsset::register($this);
 <script type="text/javascript" src="/libs/jquery/jquery-steps.js"></script>
 <script type="text/javascript" src="/libs/jquery/jquery-ui.js"></script>
 <script type="text/javascript" src="/js/wizard.js"></script>
-
-<script>
-    $('#steps').steps({
-        transitionEffect: "slideLeft",
-        onStepChanging: function (event, currentIndex, newIndex)
-        {
-
-            alert("#step");
-
-        },
-        onFinish: function () {
-            console.log('Wizard Completed');
-            $("form", this).submit();
-        }
-    });
-</script>
+<script type="text/javascript" src="/libs/jquery/validate-steps-form.js"></script>
 <?php $this->endBody() ?>
 </body>
 </html>

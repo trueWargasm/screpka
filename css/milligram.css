@@ -43,8 +43,8 @@ input[type='reset'],
 input[type='submit'] {
   background-color: #2a3549;
 
-  border: 1px solid #5cb85c;
-  border-radius: 4px;
+  border: 1px solid #2a3549;
+  border-radius: 0;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -92,8 +92,8 @@ input[type='reset'][disabled]:focus,
 input[type='reset'][disabled]:hover,
 input[type='submit'][disabled]:focus,
 input[type='submit'][disabled]:hover {
-  background-color: #9b4dca;
-  border-color: #9b4dca;
+  background-color: #2a3549;
+  color: #d35400;
 }
 
 .button.button-outline,
@@ -247,14 +247,16 @@ textarea {
 label,
 legend {
   display: block;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 5px;
+  сolor: #4f4f4f;
 }
 
 fieldset {
   border-width: 0;
   padding: 0;
+  color: #777;
 }
 
 input[type='checkbox'],
