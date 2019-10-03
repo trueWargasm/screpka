@@ -181,18 +181,19 @@ $('#radio-ads-discard').change(
     });
 
 $('.radio-ads').keyup(
-    function(){
-        radio_ads = 0;
 
+    function(e){
+        radio_ads = 0;
+/*
         count_ads = parseInt($(".radio-ads[name='radio-ads-count']").val(), 10);
         if(isNaN(count_ads) ) count_ads = 0;
 
         if(count_ads == 0) {
-            $(".radio-ads[name='radio-ads-count']").val(1)
+            $(".radio-ads[name='radio-ads-count']").val('1')
         } else {
             $(".radio-ads[name='radio-ads-count']").val(count_ads)
         }
-
+*/
         $('#radio-ads-discard').prop("checked", false);
 
         radio_ads = radio_ads + ($(".radio-ads[name='radio-ads-count']").val() * 750);

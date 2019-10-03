@@ -104,15 +104,15 @@
     //STEP4
     var step4Validate = function() {
         var inputs = $('#step4 input[type=text]');
-        var emptyInput = 0;
+        var filledItems = 0;
         for(var i = 0; i < inputs.length; i++) {
-            if(inputs[i].value != '') {
-                emptyInput++
+            if(inputs[i].value != '0' && inputs[i].value != '') {
+                filledItems++
             }
         }
         
-        if($('#step4 input[type=checkbox]:checked').length == 0) {
-            if(emptyInput == 0) {
+        if($('#step4 #advert-banners-discard:checked').length == 0) {
+            if(filledItems == 0) {
                 btnNext.attr("disabled",true);
             } else {
                 btnNext.attr("disabled",false);
@@ -148,15 +148,15 @@
     //STEP6
     var step6Validate = function() {
         var inputs = $('#step6 input[type=text]');
-        var emptyInput = 0;
+        var filledItems = 0;
         for(var i = 0; i < inputs.length; i++) {
-            if(inputs[i].value != '') {
-                emptyInput++
+            if(inputs[i].value != '0' && inputs[i].value != '') {
+                filledItems++
             }
         }
         
-        if($('#step6 input[type=checkbox]:checked').length == 0) {
-            if(emptyInput == 0) {
+        if($('#step6 #radio-ads-discard:checked').length == 0) {
+            if(filledItems == 0) {
                 btnNext.attr("disabled",true);
             } else {
                 btnNext.attr("disabled",false);
