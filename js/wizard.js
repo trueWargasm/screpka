@@ -150,7 +150,7 @@ $('#internet-discard').change(
     function(){
         if ($(this).is(':checked')) {
             $('.internet-type').prop("checked", false);
-            window.total_price.internet = 0
+            window.total_price.internet = 0;
             $('.internet-type').val(0);
         }
         window.recalc();
@@ -159,14 +159,12 @@ $('#internet-discard').change(
 $('.internet-type').keyup(
     function(){
         internet_price = 0;
-
-        $('#conference-hall-discard').prop("checked", false);
-        $.each($('.internet-type'), function(index, item){
-            internet_price = internet_price + ($(item).data('price') * $(item).val());
+        $('#internet-discard').prop("checked", false);
+        $.each($('.internet-type[type=text]'), function(index, item){
+            internet_price = internet_price +( parseInt($(item).data('price'), 10) * $(item).val());
+            window.total_price.internet = internet_price;
+            window.recalc();
         })
-        window.total_price.internet = internet_price;
-
-        window.recalc();
     }
 )
 
@@ -184,7 +182,6 @@ $('.radio-ads').keyup(
 
     function(e){
         radio_ads = 0;
-/*
         count_ads = parseInt($(".radio-ads[name='radio-ads-count']").val(), 10);
         if(isNaN(count_ads) ) count_ads = 0;
 
@@ -193,7 +190,7 @@ $('.radio-ads').keyup(
         } else {
             $(".radio-ads[name='radio-ads-count']").val(count_ads)
         }
-*/
+
         $('#radio-ads-discard').prop("checked", false);
 
         radio_ads = radio_ads + ($(".radio-ads[name='radio-ads-count']").val() * 750);

@@ -170,7 +170,7 @@
         step6Validate();
     });
 
-    $('#step6 input[type=text]').bind('input', function() {
+    $('#step6 input[name=radio-ads-count]').bind('input', function() {
         var replace = $(this).val().replace(/[^\+\d]/g, '');
         $(this).val(replace);
         step6Validate();
@@ -179,16 +179,11 @@
 
     //STEP7
     var step7Validate = function() {
-        var inputs = $('#step7 input[type=text]');
-        var emptyInput = 0;
-        for(var i = 0; i < inputs.length; i++) {
-            if(inputs[i].value != '') {
-                emptyInput++
-            }
-        }
+        var inputs = $('#step7 input[type=radio]:checked').length;
+
         
         if($('#step7 input[type=checkbox]:checked').length == 0) {
-            if(emptyInput == 0) {
+            if(inputs == 0) {
                 btnNext.attr("disabled",true);
             } else {
                 btnNext.attr("disabled",false);
@@ -201,12 +196,10 @@
     $('#step7 input[type=checkbox]').change(function () {
         step7Validate();
     });
-
-    $('#step7 input[type=text]').bind('input', function() {
-        var replace = $(this).val().replace(/[^\+\d]/g, '');
-        $(this).val(replace);
+    $('#step7 input[type=radio]').change(function () {
         step7Validate();
     });
+
     //END STEP7
 
     var stepper = function(direction) {
