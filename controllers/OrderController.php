@@ -12,9 +12,16 @@ class OrderController extends \yii\web\Controller
     public function actionVerify()
     {
         $session = \Yii::$app->session;
-        echo "<pre>";
-        var_dump($_SESSION);
-        exit();
+        $stand = $session["stand"];
+
+        $h= $stand["width"];
+        $w= $stand["length"];
+
+        $services = json_decode($session["service"]);
+        $anketa = $session["anketa"];
+        $build = $session["build"];
+
+        return $this->render('verify', ['phpWidth' => $w, 'phpLength' => $h, 'services' => $services]);
     }
 
 }
