@@ -131,16 +131,16 @@ use yii\helpers\Html;
                                 <div class="step-tab-panel" id="step6">
                                     <label>Радио объявления</label>
                                     <fieldset>
-                                        Радио объявления (750 руб.) <input type="text" name="radio-ads-count" class="step-tab-input radio-ads" />  шт.
+                                        Радио объявления (750 руб.) <input type="text" name="radio[ads-count]" class="step-tab-input radio-ads" />  шт.
                                     </fieldset>
                                     <fieldset>
-                                        Текст объявления <input type="text" name="radio-ads-text" class="step-tab-input radio-ads" style="width: 500px"/>
+                                        Текст объявления <input type="text" name="radio[ads-text]" class="step-tab-input radio-ads" style="width: 500px"/>
+                                    </fieldset>]
+                                    <fieldset>
+                                        Желаемое расписание <input type="text" name="radio[ads-sched]" class="step-tab-input radio-ads" style="width: 500px"/>
                                     </fieldset>
                                     <fieldset>
-                                        Желаемое расписание <input type="text" name="radio-ads-sched" class="step-tab-input radio-ads" style="width: 500px"/>
-                                    </fieldset>
-                                    <fieldset>
-                                        <input id="radio-ads-discard" name="radio-ads" type="checkbox" value="no" />Отказываюсь от услуги
+                                        <input id="radio-ads-discard" name="radio[ads]" type="checkbox" value="no" />Отказываюсь от услуги
                                     </fieldset>
                                 </div>
                                 <div class="step-tab-panel" id="step7">
